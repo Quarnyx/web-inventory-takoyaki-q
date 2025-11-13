@@ -78,11 +78,9 @@
     <script src="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
 
-    <!-- Dashboard App js -->
-    <script src="assets/js/pages/demo.dashboard.js"></script>
 
     <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/app.js"></script>
 
 </body>
 

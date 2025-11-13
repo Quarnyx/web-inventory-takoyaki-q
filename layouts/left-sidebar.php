@@ -61,21 +61,21 @@
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-calendar.php" class="side-nav-link">
+        <a href="?page=data-barang" class="side-nav-link">
           <i class="ri-file-list-line"></i>
           <span> Data Barang </span>
         </a>
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=data-kategori" class="side-nav-link">
           <i class="ri-node-tree"></i>
           <span> Kategori </span>
         </a>
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=data-supplier" class="side-nav-link">
           <i class="ri-database-line"></i>
           <span> Supplier </span>
         </a>

@@ -139,8 +139,14 @@
 
             // activate the menu in left side bar (Vertical Menu) based on url
             $(".side-nav a").each(function () {
-                var pageUrl = window.location.href.split(/[?#]/)[0];
-                if (this.href == pageUrl) {
+                // Ambil parameter page dari query string
+                const urlParams = new URLSearchParams(window.location.search);
+                const currentPage = urlParams.get('page');
+
+                // Ambil parameter page dari href link
+                const linkUrl = new URL(this.href);
+                const linkPage = new URLSearchParams(linkUrl.search).get('page');
+                if (currentPage && linkPage && currentPage === linkPage) {
                     $(this).addClass("active");
                     $(this).parent().addClass("menuitem-active");
                     $(this).parent().parent().parent().addClass("show");
