@@ -54,7 +54,7 @@
       <li class="side-nav-title">Master Data</li>
 
       <li class="side-nav-item">
-        <a href="" class="side-nav-link">
+        <a href="?page=data-pengguna" class="side-nav-link">
           <i class="ri-shield-user-line"></i>
           <span>Pengguna </span>
         </a>
