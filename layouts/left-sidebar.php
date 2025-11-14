@@ -84,7 +84,7 @@
       <li class="side-nav-title">Transaksi</li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=preorder-barang" class="side-nav-link">
           <i class="ri-upload-2-line"></i>
           <span> PO Barang </span>
         </a>
