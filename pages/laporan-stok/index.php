@@ -144,7 +144,7 @@ $summary = $summary_result->fetch_assoc();
 <!-- Report Table -->
 <div class="card">
     <div class="card-header bg-light d-flex justify-content-between align-items-center">
-        <h5 class="mb-0"><i class="bi bi-table"></i> Detail Pergerakan Stok (Termasuk Retur)</h5>
+        <h5 class="mb-0 d-print-none"><i class="bi bi-table"></i> Detail Pergerakan Stok (Termasuk Retur)</h5>
         <div>
             <button class="btn btn-primary btn-sm" onclick="window.print()">
                 <i class="bi bi-printer"></i> Cetak
@@ -152,6 +152,9 @@ $summary = $summary_result->fetch_assoc();
         </div>
     </div>
     <div class="card-body">
+        <h3 class="text-center mt-10">Laporan Pergerakan Stok</h3>
+        <h5 class="text-center mb-1">Periode: <?= $tanggal_dari ?> - <?= $tanggal_sampai ?></h5>
+        <hr />
         <?php if ($result && $result->num_rows > 0): ?>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover table-sm" id="stockTable">

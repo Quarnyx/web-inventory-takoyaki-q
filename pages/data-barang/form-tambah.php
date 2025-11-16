@@ -3,17 +3,17 @@
         <div class="row">
             <div class="col-md-6">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" name="nama_barang" id="nama" placeholder="Nama">
+                <input type="text" class="form-control" name="nama_barang" id="nama" placeholder="Nama Barang">
             </div>
             <div class="col-md-6">
                 <label for="username" class="form-label">Koda Barang</label>
-                <input type="text" class="form-control" name="kode_barang" id="kode_barang" placeholder="Username">
+                <input type="text" class="form-control" name="kode_barang" id="kode_barang" placeholder="Kode Barang">
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <label for="satuan" class="form-label">Satuan</label>
-                <input type="satuan" class="form-control" name="satuan" id="satuan" placeholder="Password">
+                <input type="satuan" class="form-control" name="satuan" id="satuan" placeholder="Satuan">
             </div>
             <div class="col-md-6">
                 <label for="kategori" class="form-label">Kategori</label>

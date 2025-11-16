@@ -3,7 +3,7 @@
   <!-- Brand Logo Light -->
   <a href="index.php" class="logo logo-light">
     <span class="logo-lg">
-      <img src="assets/images/logo.png" alt="logo" />
+      <img src="assets/images/logo-dark.png" alt="logo" />
     </span>
     <span class="logo-sm">
       <img src="assets/images/logo-sm.png" alt="small logo" />
@@ -128,28 +128,28 @@
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=laporan-po" class="side-nav-link">
           <i class="ri-file-chart-2-line"></i>
           <span> PO Barang </span>
         </a>
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=laporan-pengeluaran" class="side-nav-link">
           <i class="ri-file-chart-2-line"></i>
           <span> Pengeluaran Barang </span>
         </a>
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=laporan-penerimaan" class="side-nav-link">
           <i class="ri-file-chart-2-line"></i>
           <span> Penerimaan Barang </span>
         </a>
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=laporan-retur" class="side-nav-link">
           <i class="ri-file-chart-2-line"></i>
           <span> Retur Barang </span>
         </a>
