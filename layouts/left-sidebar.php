@@ -91,7 +91,7 @@
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=pengeluaran-barang" class="side-nav-link">
           <i class="ri-inbox-unarchive-line"></i>
           <span> Pengeluaran Barang </span>
         </a>
@@ -105,7 +105,7 @@
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=retur-barang" class="side-nav-link">
           <i class="ri-arrow-go-back-line"></i>
           <span> Retur Barang </span>
         </a>
