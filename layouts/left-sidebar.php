@@ -100,7 +100,14 @@
       <li class="side-nav-item">
         <a href="?page=penerimaan-barang" class="side-nav-link">
           <i class="ri-download-2-line"></i>
-          <span> Penerimaan Barang </span>
+          <span> Penerimaan Barang Supplier</span>
+        </a>
+      </li>
+
+      <li class="side-nav-item">
+        <a href="?page=penerimaan-barang-kantor" class="side-nav-link">
+          <i class="ri-download-2-line"></i>
+          <span> Penerimaan Barang Kantor</span>
         </a>
       </li>
 
@@ -114,7 +121,7 @@
       <li class="side-nav-title">Laporan</li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=laporan-stok" class="side-nav-link">
           <i class="ri-file-chart-2-line"></i>
           <span> Stok Barang </span>
         </a>

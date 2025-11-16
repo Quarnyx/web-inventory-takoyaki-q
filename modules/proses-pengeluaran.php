@@ -20,9 +20,9 @@ switch ($_GET['aksi'] ?? '') {
                 $jumlah = $item['jumlah'];
 
                 $sql = "INSERT INTO pengeluaran_barang 
-                        (kode_pengeluaran, barang_id, jumlah, tanggal_keluar, tujuan_barang, user_id) 
+                        (kode_pengeluaran, barang_id, jumlah, tanggal_keluar, tujuan_barang, user_id, status) 
                         VALUES 
-                        ('$kode_pengeluaran', '$barang_id', '$jumlah', '$tanggal_keluar', '$tujuan_barang', '$user_id')";
+                        ('$kode_pengeluaran', '$barang_id', '$jumlah', '$tanggal_keluar', '$tujuan_barang', '$user_id', 'dikirim')";
 
                 if (!$conn->query($sql)) {
                     $success = false;
