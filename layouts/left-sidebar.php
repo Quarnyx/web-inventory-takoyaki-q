@@ -40,123 +40,227 @@
       </a>
     </div>
 
-    <!--- Sidemenu -->
-    <ul class="side-nav">
-      <li class="side-nav-title">Main Menu</li>
+    <?php
+    if ($_SESSION['level'] == 'Admin') {
+      ?>
+      <!--- Sidemenu -->
+      <ul class="side-nav">
+        <li class="side-nav-title">Main Menu</li>
 
-      <li class="side-nav-item">
-        <a href="?page=dashboard" class="side-nav-link">
-          <i class="ri-home-4-line"></i>
-          <span> Dashboards </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=dashboard" class="side-nav-link">
+            <i class="ri-home-4-line"></i>
+            <span> Dashboards </span>
+          </a>
+        </li>
 
-      <li class="side-nav-title">Master Data</li>
+        <li class="side-nav-title">Master Data</li>
 
-      <li class="side-nav-item">
-        <a href="?page=data-pengguna" class="side-nav-link">
-          <i class="ri-shield-user-line"></i>
-          <span>Pengguna </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=data-pengguna" class="side-nav-link">
+            <i class="ri-shield-user-line"></i>
+            <span>Pengguna </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=data-barang" class="side-nav-link">
-          <i class="ri-file-list-line"></i>
-          <span> Data Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=data-barang" class="side-nav-link">
+            <i class="ri-file-list-line"></i>
+            <span> Data Barang </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=data-kategori" class="side-nav-link">
-          <i class="ri-node-tree"></i>
-          <span> Kategori </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=data-kategori" class="side-nav-link">
+            <i class="ri-node-tree"></i>
+            <span> Kategori </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=data-supplier" class="side-nav-link">
-          <i class="ri-database-line"></i>
-          <span> Supplier </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=data-supplier" class="side-nav-link">
+            <i class="ri-database-line"></i>
+            <span> Supplier </span>
+          </a>
+        </li>
 
-      <li class="side-nav-title">Transaksi</li>
+        <li class="side-nav-title">Transaksi</li>
 
-      <li class="side-nav-item">
-        <a href="?page=preorder-barang" class="side-nav-link">
-          <i class="ri-upload-2-line"></i>
-          <span> PO Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=preorder-barang" class="side-nav-link">
+            <i class="ri-upload-2-line"></i>
+            <span> PO Barang </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=pengeluaran-barang" class="side-nav-link">
-          <i class="ri-inbox-unarchive-line"></i>
-          <span> Pengeluaran Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=pengeluaran-barang" class="side-nav-link">
+            <i class="ri-inbox-unarchive-line"></i>
+            <span> Pengeluaran Barang </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=penerimaan-barang" class="side-nav-link">
-          <i class="ri-download-2-line"></i>
-          <span> Penerimaan Barang Supplier</span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=penerimaan-barang" class="side-nav-link">
+            <i class="ri-download-2-line"></i>
+            <span> Penerimaan Barang Supplier</span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=penerimaan-barang-kantor" class="side-nav-link">
-          <i class="ri-download-2-line"></i>
-          <span> Penerimaan Barang Kantor</span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=penerimaan-barang-kantor" class="side-nav-link">
+            <i class="ri-download-2-line"></i>
+            <span> Penerimaan Barang Kantor</span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=retur-barang" class="side-nav-link">
-          <i class="ri-arrow-go-back-line"></i>
-          <span> Retur Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=retur-barang" class="side-nav-link">
+            <i class="ri-arrow-go-back-line"></i>
+            <span> Retur Barang </span>
+          </a>
+        </li>
 
-      <li class="side-nav-title">Laporan</li>
+        <li class="side-nav-title">Laporan</li>
 
-      <li class="side-nav-item">
-        <a href="?page=laporan-stok" class="side-nav-link">
-          <i class="ri-file-chart-2-line"></i>
-          <span> Stok Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=laporan-stok" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Stok Barang </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=laporan-po" class="side-nav-link">
-          <i class="ri-file-chart-2-line"></i>
-          <span> PO Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=laporan-po" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> PO Barang </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=laporan-pengeluaran" class="side-nav-link">
-          <i class="ri-file-chart-2-line"></i>
-          <span> Pengeluaran Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=laporan-pengeluaran" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Pengeluaran Barang </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=laporan-penerimaan" class="side-nav-link">
-          <i class="ri-file-chart-2-line"></i>
-          <span> Penerimaan Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=laporan-penerimaan" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Penerimaan Barang </span>
+          </a>
+        </li>
 
-      <li class="side-nav-item">
-        <a href="?page=laporan-retur" class="side-nav-link">
-          <i class="ri-file-chart-2-line"></i>
-          <span> Retur Barang </span>
-        </a>
-      </li>
+        <li class="side-nav-item">
+          <a href="?page=laporan-retur" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Retur Barang </span>
+          </a>
+        </li>
 
-    </ul>
-    <!--- End Sidemenu -->
+      </ul>
+      <!--- End Sidemenu -->
+    <?php } ?>
+    <?php
+    if ($_SESSION['level'] == 'Owner') {
+      ?>
+      <!--- Sidemenu -->
+      <ul class="side-nav">
+        <li class="side-nav-title">Main Menu</li>
+
+        <li class="side-nav-item">
+          <a href="?page=dashboard" class="side-nav-link">
+            <i class="ri-home-4-line"></i>
+            <span> Dashboards </span>
+          </a>
+        </li>
+
+        <li class="side-nav-title">Laporan</li>
+
+        <li class="side-nav-item">
+          <a href="?page=laporan-stok" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Stok Barang </span>
+          </a>
+        </li>
+
+        <li class="side-nav-item">
+          <a href="?page=laporan-po" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> PO Barang </span>
+          </a>
+        </li>
+
+        <li class="side-nav-item">
+          <a href="?page=laporan-pengeluaran" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Pengeluaran Barang </span>
+          </a>
+        </li>
+
+        <li class="side-nav-item">
+          <a href="?page=laporan-penerimaan" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Penerimaan Barang </span>
+          </a>
+        </li>
+
+        <li class="side-nav-item">
+          <a href="?page=laporan-retur" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Retur Barang </span>
+          </a>
+        </li>
+
+      </ul>
+      <!--- End Sidemenu -->
+    <?php } ?>
+
+    <?php
+    if ($_SESSION['level'] == 'Karyawan') {
+      ?>
+      <!--- Sidemenu -->
+      <ul class="side-nav">
+        <li class="side-nav-title">Main Menu</li>
+
+        <li class="side-nav-item">
+          <a href="?page=dashboard" class="side-nav-link">
+            <i class="ri-home-4-line"></i>
+            <span> Dashboards </span>
+          </a>
+        </li>
+
+
+
+        <li class="side-nav-title">Transaksi</li>
+
+        <li class="side-nav-item">
+          <a href="?page=penerimaan-barang-kantor" class="side-nav-link">
+            <i class="ri-download-2-line"></i>
+            <span> Penerimaan Barang Kantor</span>
+          </a>
+        </li>
+
+        <li class="side-nav-item">
+          <a href="?page=retur-barang" class="side-nav-link">
+            <i class="ri-arrow-go-back-line"></i>
+            <span> Retur Barang </span>
+          </a>
+        </li>
+
+        <li class="side-nav-title">Laporan</li>
+
+        <li class="side-nav-item">
+          <a href="?page=laporan-stok" class="side-nav-link">
+            <i class="ri-file-chart-2-line"></i>
+            <span> Stok Barang </span>
+          </a>
+        </li>
+
+
+      </ul>
+      <!--- End Sidemenu -->
+    <?php } ?>
 
     <div class="clearfix"></div>
   </div>

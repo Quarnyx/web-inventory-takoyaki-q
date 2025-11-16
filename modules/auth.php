@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             header('Location: ../app.php?page=dashboard');
         } else {
-            header("location:../login.php?error=Password salah");
+            header("location:../auth-login.php?error=Password salah");
         }
     } else {
         header("location:../auth-login.php?error=Username tidak ditemukan");
