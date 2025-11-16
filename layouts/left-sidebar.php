@@ -98,7 +98,7 @@
       </li>
 
       <li class="side-nav-item">
-        <a href="apps-chat.php" class="side-nav-link">
+        <a href="?page=penerimaan-barang" class="side-nav-link">
           <i class="ri-download-2-line"></i>
           <span> Penerimaan Barang </span>
         </a>
