@@ -93,12 +93,7 @@
           </a>
         </li>
 
-        <li class="side-nav-item">
-          <a href="?page=pengeluaran-barang" class="side-nav-link">
-            <i class="ri-inbox-unarchive-line"></i>
-            <span> Pengeluaran Barang </span>
-          </a>
-        </li>
+
 
         <li class="side-nav-item">
           <a href="?page=penerimaan-barang" class="side-nav-link">
@@ -107,17 +102,26 @@
           </a>
         </li>
 
-        <li class="side-nav-item">
-          <a href="?page=penerimaan-barang-kantor" class="side-nav-link">
-            <i class="ri-download-2-line"></i>
-            <span> Penerimaan Barang Kantor</span>
-          </a>
-        </li>
+
 
         <li class="side-nav-item">
           <a href="?page=retur-barang" class="side-nav-link">
             <i class="ri-arrow-go-back-line"></i>
             <span> Retur Barang </span>
+          </a>
+        </li>
+
+        <li class="side-nav-item">
+          <a href="?page=pengeluaran-barang" class="side-nav-link">
+            <i class="ri-inbox-unarchive-line"></i>
+            <span> Pengeluaran Barang </span>
+          </a>
+        </li>
+
+        <li class="side-nav-item">
+          <a href="?page=penerimaan-barang-kantor" class="side-nav-link">
+            <i class="ri-download-2-line"></i>
+            <span> Penerimaan Barang Cabang</span>
           </a>
         </li>
 

@@ -67,7 +67,7 @@ $kode_retur = "RET-$date-$new_number";
         <div id="items-container">
             <div class="item-row mb-3 p-3 border rounded bg-light">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <label class="form-label">Barang <span class="text-danger">*</span></label>
                         <select class="form-select barang-select" name="items[0][barang_id]" data-index="0" required>
                             <option value="">Pilih Barang</option>
@@ -81,7 +81,7 @@ $kode_retur = "RET-$date-$new_number";
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <label class="form-label">Jumlah <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <input type="number" class="form-control jumlah-input" name="items[0][jumlah]" min="1"

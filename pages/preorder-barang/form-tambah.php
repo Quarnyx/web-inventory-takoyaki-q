@@ -49,10 +49,7 @@ $kode_po = "PO-$date-$new_number";
         <div class="mb-3">
             <label class="form-label">Status</label>
             <select class="form-select" name="status">
-                <option value="draft">Draft</option>
                 <option value="dipesan" selected>Dipesan</option>
-                <option value="diterima">Diterima</option>
-                <option value="dibatalkan">Dibatalkan</option>
             </select>
         </div>
 

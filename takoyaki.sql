@@ -23,9 +23,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `barang`;
 CREATE TABLE `barang`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `kode_barang` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `nama_barang` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `satuan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `kode_barang` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nama_barang` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `satuan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `kategori_id` bigint UNSIGNED NULL DEFAULT NULL,
   `stok_minimal` int UNSIGNED NULL DEFAULT 0,
   `harga_beli` decimal(15, 2) NULL DEFAULT 0.00,
@@ -33,7 +33,7 @@ CREATE TABLE `barang`  (
   UNIQUE INDEX `kode_barang`(`kode_barang` ASC) USING BTREE,
   INDEX `fk_barang_kategori`(`kategori_id` ASC) USING BTREE,
   CONSTRAINT `fk_barang_kategori` FOREIGN KEY (`kategori_id`) REFERENCES `kategori_barang` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of barang
@@ -47,10 +47,10 @@ INSERT INTO `barang` VALUES (11, 'BG-002', 'Tepun', 'KG', 2, 1, 10000.00);
 DROP TABLE IF EXISTS `kategori_barang`;
 CREATE TABLE `kategori_barang`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nama_kategori` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `keterangan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `nama_kategori` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `keterangan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of kategori_barang
@@ -64,11 +64,11 @@ INSERT INTO `kategori_barang` VALUES (5, 'Minuman', 'minuman ringan');
 DROP TABLE IF EXISTS `penerimaan_barang`;
 CREATE TABLE `penerimaan_barang`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `kode_penerimaan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `kode_penerimaan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `barang_id` bigint UNSIGNED NOT NULL,
   `jumlah` int UNSIGNED NOT NULL,
   `tanggal_penerimaan` date NOT NULL,
-  `tipe_penerimaan` enum('supplier','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `tipe_penerimaan` enum('supplier','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `supplier_id` bigint UNSIGNED NULL DEFAULT NULL,
   `dari_user_id` bigint UNSIGNED NULL DEFAULT NULL,
   `penerima_user_id` bigint UNSIGNED NULL DEFAULT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE `penerimaan_barang`  (
   CONSTRAINT `fk_penerimaan_dari_user` FOREIGN KEY (`dari_user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_penerimaan_penerima_user` FOREIGN KEY (`penerima_user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `fk_penerimaan_supplier` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of penerimaan_barang
@@ -99,13 +99,13 @@ INSERT INTO `penerimaan_barang` VALUES (9, 'TR-20251116-002', 11, 2, '2025-11-16
 DROP TABLE IF EXISTS `pengeluaran_barang`;
 CREATE TABLE `pengeluaran_barang`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `kode_pengeluaran` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `kode_pengeluaran` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `barang_id` bigint UNSIGNED NOT NULL,
   `jumlah` int UNSIGNED NOT NULL,
   `tanggal_keluar` date NOT NULL,
-  `tujuan_barang` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `tujuan_barang` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `user_id` bigint UNSIGNED NULL DEFAULT NULL,
-  `status` enum('diterima','dikirim') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `status` enum('diterima','dikirim') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_pengeluaran_barang`(`barang_id` ASC) USING BTREE,
   INDEX `fk_pengeluaran_user`(`user_id` ASC) USING BTREE,
@@ -113,7 +113,7 @@ CREATE TABLE `pengeluaran_barang`  (
   INDEX `idx_tgl_keluar`(`tanggal_keluar` ASC) USING BTREE,
   CONSTRAINT `fk_pengeluaran_barang` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_pengeluaran_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pengeluaran_barang
@@ -127,12 +127,12 @@ INSERT INTO `pengeluaran_barang` VALUES (5, 'OUT-20251116-001', 11, 2, '2025-11-
 DROP TABLE IF EXISTS `pre_order_barang`;
 CREATE TABLE `pre_order_barang`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `kode_po` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `kode_po` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `barang_id` bigint UNSIGNED NOT NULL,
   `jumlah` int UNSIGNED NOT NULL,
   `tanggal_pemesanan` date NOT NULL,
   `supplier_id` bigint UNSIGNED NOT NULL,
-  `status` enum('draft','dipesan','diterima','dibatalkan') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT 'draft',
+  `status` enum('draft','dipesan','diterima','dibatalkan') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT 'draft',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_po_barang`(`barang_id` ASC) USING BTREE,
   INDEX `fk_po_supplier`(`supplier_id` ASC) USING BTREE,
@@ -140,7 +140,7 @@ CREATE TABLE `pre_order_barang`  (
   INDEX `idx_tgl_po`(`tanggal_pemesanan` ASC) USING BTREE,
   CONSTRAINT `fk_po_barang` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_po_supplier` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pre_order_barang
@@ -154,10 +154,10 @@ INSERT INTO `pre_order_barang` VALUES (9, 'PO-20251116-001', 11, 10, '2025-11-16
 DROP TABLE IF EXISTS `retur_barang`;
 CREATE TABLE `retur_barang`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `kode_retur` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `kode_retur` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `barang_id` bigint UNSIGNED NOT NULL,
   `jumlah` int UNSIGNED NOT NULL,
-  `penyebab_retur` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `penyebab_retur` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal_retur` date NOT NULL,
   `supplier_id` bigint UNSIGNED NOT NULL,
   `user_id` bigint UNSIGNED NULL DEFAULT NULL,
@@ -170,7 +170,7 @@ CREATE TABLE `retur_barang`  (
   CONSTRAINT `fk_retur_barang` FOREIGN KEY (`barang_id`) REFERENCES `barang` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_retur_supplier` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_retur_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of retur_barang
@@ -182,11 +182,11 @@ CREATE TABLE `retur_barang`  (
 DROP TABLE IF EXISTS `suppliers`;
 CREATE TABLE `suppliers`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nama_supplier` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `kontak` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+  `nama_supplier` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `kontak` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of suppliers
@@ -199,15 +199,15 @@ INSERT INTO `suppliers` VALUES (3, 'PT. Siba Surya', '22132', 'aa');
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `username` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `level` enum('Admin','Karyawan','Owner') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `level` enum('Admin','Karyawan','Owner') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `email`(`username` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users

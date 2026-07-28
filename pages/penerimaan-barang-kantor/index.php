@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
-            <h4 class="page-title">Data Penerimaan Barang</h4>
+            <h4 class="page-title">Data Penerimaan Barang Cabang</h4>
         </div>
     </div>
 </div>
@@ -9,8 +9,8 @@
 <div class="row">
     <div class="card">
         <div class="card-header">
-            <h5 class="card-title">Data Penerimaan Barang dari Supplier</h5>
-            <p class="card-subtitle">Tabel menampilkan data penerimaan barang di aplikasi
+            <h5 class="card-title">Data Penerimaan Barang dari Kantor</h5>
+            <p class="card-subtitle">Tabel menampilkan data penerimaan barang dari kantor di aplikasi
             </p>
         </div>
         <div class="card-body">
