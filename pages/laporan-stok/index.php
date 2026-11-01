@@ -179,6 +179,7 @@ $summary = $summary_result->fetch_assoc();
                         <?php
                         $no = 1;
                         $stok_running = [];
+                        $total_stok_akhir = 0;
 
                         // Calculate initial stock using view
                         $initial_stock_query = "
@@ -201,6 +202,7 @@ $summary = $summary_result->fetch_assoc();
                             }
 
                             $stok_running[$row['barang_id']] += $row['selisih'];
+                            $total_stok_akhir += $stok_running[$row['barang_id']];
                             ?>
                             <tr>
                                 <td class="text-center"><?= $no++ ?></td>
@@ -241,6 +243,12 @@ $summary = $summary_result->fetch_assoc();
                                 </td>
                             </tr>
                         <?php endwhile; ?>
+                        <tr>
+                            <td colspan="6" class="text-end"><strong>Total Stok Akhir</strong></td>
+                            <td colspan="5" class="text-center">
+                                <strong><?= number_format($total_stok_akhir, 0, ',', '.') ?></strong>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
