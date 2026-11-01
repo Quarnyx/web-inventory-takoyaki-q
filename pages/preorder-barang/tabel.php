@@ -12,7 +12,7 @@
         <tbody>
             <?php
             include '../../modules/config.php';
-            $query = "SELECT pre_order_barang.*, barang.nama_barang, suppliers.nama_supplier FROM pre_order_barang INNER JOIN barang ON pre_order_barang.barang_id = barang.id INNER JOIN suppliers ON pre_order_barang.supplier_id = suppliers.id GROUP BY pre_order_barang.kode_po";
+            $query = "SELECT pre_order_barang.*, barang.nama_barang, suppliers.nama_supplier FROM pre_order_barang INNER JOIN barang ON pre_order_barang.barang_id = barang.id INNER JOIN suppliers ON pre_order_barang.supplier_id = suppliers.id GROUP BY pre_order_barang.kode_po ORDER BY pre_order_barang.kode_po DESC";
             $result = mysqli_query($conn, $query);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc(($result))) {
@@ -50,7 +50,8 @@
     $(document).ready(function () {
         new DataTable('#data-table',
             {
-                responsive: true
+                responsive: true,
+                sorting: [[0, 'desc']],
             }
         );
         $('#data-table').on('click', '#edit', function () {

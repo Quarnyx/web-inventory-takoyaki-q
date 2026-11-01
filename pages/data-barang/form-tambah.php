@@ -1,13 +1,26 @@
 <form id="tambah-barang" enctype="multipart/form-data">
     <div class="d-grid gap-3">
         <div class="row">
+            <?php
+            //generator kode barang
+            require_once '../../modules/config.php';
+            $sql = "SELECT MAX(kode_barang) AS max_kode FROM barang";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $max_kode = $row['max_kode'];
+            $no_urut = substr($max_kode, 3);
+            $no_urut++;
+            $char = "BG-";
+            $kode_barang = $char . sprintf("%03s", $no_urut);
+            ?>
+            <div class="col-md-6">
+                <label for="username" class="form-label">Koda Barang</label>
+                <input type="text" class="form-control" name="kode_barang" id="kode_barang"
+                    value="<?php echo $kode_barang; ?>" readonly>
+            </div>
             <div class="col-md-6">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" name="nama_barang" id="nama" placeholder="Nama Barang">
-            </div>
-            <div class="col-md-6">
-                <label for="username" class="form-label">Koda Barang</label>
-                <input type="text" class="form-control" name="kode_barang" id="kode_barang" placeholder="Kode Barang">
             </div>
         </div>
         <div class="row">

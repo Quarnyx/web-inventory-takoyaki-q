@@ -48,7 +48,8 @@
     $(document).ready(function () {
         new DataTable('#data-table',
             {
-                responsive: true
+                responsive: true,
+                sorting: [[0, 'desc']],
             }
         );
         $('#data-table').on('click', '#edit', function () {

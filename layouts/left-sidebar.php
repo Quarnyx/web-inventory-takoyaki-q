@@ -57,13 +57,6 @@
         <li class="side-nav-title">Master Data</li>
 
         <li class="side-nav-item">
-          <a href="?page=data-pengguna" class="side-nav-link">
-            <i class="ri-shield-user-line"></i>
-            <span>Pengguna </span>
-          </a>
-        </li>
-
-        <li class="side-nav-item">
           <a href="?page=data-barang" class="side-nav-link">
             <i class="ri-file-list-line"></i>
             <span> Data Barang </span>
@@ -117,14 +110,6 @@
             <span> Pengeluaran Barang </span>
           </a>
         </li>
-
-        <li class="side-nav-item">
-          <a href="?page=penerimaan-barang-kantor" class="side-nav-link">
-            <i class="ri-download-2-line"></i>
-            <span> Penerimaan Barang Cabang</span>
-          </a>
-        </li>
-
         <li class="side-nav-title">Laporan</li>
 
         <li class="side-nav-item">
@@ -176,6 +161,13 @@
           <a href="?page=dashboard" class="side-nav-link">
             <i class="ri-home-4-line"></i>
             <span> Dashboards </span>
+          </a>
+        </li>
+
+        <li class="side-nav-item">
+          <a href="?page=data-pengguna" class="side-nav-link">
+            <i class="ri-shield-user-line"></i>
+            <span>Pengguna </span>
           </a>
         </li>
 

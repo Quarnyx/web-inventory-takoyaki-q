@@ -1,3 +1,5 @@
+<?php include 'pages/laporan-stok/notif-stok.php'; ?>
+
 <?php
 require_once 'modules/config.php';
 // Get filter parameters
@@ -88,10 +90,10 @@ $result = $conn->query($query);
 <?php
 $summary_query = "
             SELECT 
-                SUM(stok_masuk) as total_masuk,
-                SUM(pengeluaran) as total_pengeluaran,
-                SUM(retur) as total_retur,
-                SUM(stok_keluar) as total_keluar,
+                COALESCE(SUM(stok_masuk), 0) as total_masuk,
+                COALESCE(SUM(pengeluaran), 0) as total_pengeluaran,
+                COALESCE(SUM(retur), 0) as total_retur,
+                COALESCE(SUM(stok_keluar), 0) as total_keluar,
                 COUNT(DISTINCT CASE WHEN stok_masuk > 0 THEN barang_id END) as jumlah_barang_masuk,
                 COUNT(DISTINCT CASE WHEN stok_keluar > 0 THEN barang_id END) as jumlah_barang_keluar
             FROM v_daily_stock_summary
